@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bao2xvkxhjuo6"]
+
+[ext_resource type="Texture2D" uid="uid://dybuxh3b5xm0i" path="res://circle.png" id="1_a2vmx"]
+[ext_resource type="Script" path="res://circle_of_death.gd" id="2_m84sv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_anylv"]
+radius = 30.5406
+
+[node name="CircleOfDeath" type="PointLight2D"]
+position = Vector2(512, 512)
+scale = Vector2(20, 20)
+blend_mode = 1
+texture = ExtResource("1_a2vmx")
+script = ExtResource("2_m84sv")
+shrink_speed = 3.0
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_anylv")
